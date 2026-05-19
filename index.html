@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>어큐메딕스</title>
-<meta name="google-site-verification" content="MFJ36V2n9hW0Lfy1EKiw55zjjfsKsQAsOxyHxRWLURQ" />
-<meta name="naver-site-verification" content="2c7d2efe6f77b65e1c7c2a64bf409bd895427996" />
-</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주식회사 어큐메딕스 | 동물 감염병 진단·백신 연구개발</title>
@@ -326,7 +322,114 @@ footer { background: #0a0e1a; padding: 44px 0; border-top: 1px solid rgba(255,25
 .footer-info { font-size: 12px; color: rgba(255,255,255,0.25); line-height: 2.1; }
 .footer-copy { font-size: 11px; color: rgba(255,255,255,0.16); align-self: flex-end; }
 
-/* ── RESPONSIVE ── */
+/* ── PARROT SECTION ── */
+#parrot { background: var(--bg2); }
+
+.parrot-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start; margin-bottom: 64px;
+}
+.parrot-intro-text p {
+  font-size: 15px; color: var(--sub); line-height: 1.9; margin-bottom: 16px;
+}
+
+.disease-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  border: 1px solid var(--border); margin-bottom: 64px;
+}
+.disease-card {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+  position: relative; transition: background 0.2s;
+}
+.disease-card:last-child { border-right: none; }
+.disease-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 0; background: var(--red);
+  transition: height 0.25s ease;
+}
+.disease-card:hover { background: var(--bg); }
+.disease-card:hover::before { height: 100%; }
+.dc-num { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--red); letter-spacing: 2px; margin-bottom: 10px; }
+.dc-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.dc-name { font-size: 11px; color: var(--muted); margin-bottom: 8px; font-style: italic; }
+.dc-desc { font-size: 12.5px; color: var(--sub); line-height: 1.75; }
+
+.procedure-wrap { margin-bottom: 64px; }
+.procedure-steps {
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 0; margin-top: 32px;
+}
+.proc-step {
+  padding: 28px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-right: none;
+  position: relative; text-align: center;
+}
+.proc-step:last-child { border-right: 1px solid var(--border); }
+.proc-step::after {
+  content: '→';
+  position: absolute; right: -14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; color: var(--red);
+  z-index: 1; font-weight: 700;
+}
+.proc-step:last-child::after { display: none; }
+.proc-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+}
+.proc-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.proc-desc { font-size: 11px; color: var(--muted); line-height: 1.6; }
+
+.hospital-section { }
+.hospital-note {
+  background: var(--bg); border: 1px solid var(--border);
+  border-left: 3px solid var(--navy);
+  padding: 20px 24px; margin-bottom: 28px;
+}
+.hospital-note p { font-size: 13.5px; color: var(--sub); line-height: 1.8; }
+
+.hospital-map-placeholder {
+  width: 100%; height: 280px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px; margin-bottom: 24px; border-radius: 4px;
+}
+.hospital-map-placeholder p { font-size: 13px; color: var(--muted); }
+.hospital-map-placeholder small { font-size: 11px; color: var(--muted); }
+
+.hospital-list { }
+.hospital-item {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline; font-size: 13.5px;
+}
+.hospital-item:first-child { border-top: 1px solid var(--border); }
+.h-name { font-weight: 700; color: var(--navy); }
+.h-addr { color: var(--sub); }
+.h-tel  { color: var(--muted); }
+
+@media (max-width: 860px) {
+  .parrot-intro { grid-template-columns: 1fr; gap: 32px; }
+  .disease-grid { grid-template-columns: 1fr 1fr; }
+  .disease-card:nth-child(2) { border-right: none; }
+  .disease-card:nth-child(3),
+  .disease-card:nth-child(4) { border-top: 1px solid var(--border); }
+  .procedure-steps { grid-template-columns: 1fr; }
+  .proc-step { border-right: 1px solid var(--border); border-bottom: none; }
+  .proc-step:last-child { border-bottom: 1px solid var(--border); }
+  .proc-step::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -14px; transform: translateX(-50%); }
+  .hospital-item { grid-template-columns: 1fr; gap: 4px; }
+}
+
 @media (max-width: 860px) {
   .wrap { padding: 0 24px; }
   .nav-inner { padding: 0 24px; }
@@ -361,6 +464,7 @@ footer { background: #0a0e1a; padding: 44px 0; border-top: 1px solid rgba(255,25
       <li><a href="#technology">기술 접근</a></li>
       <li><a href="#pipeline">파이프라인</a></li>
       <li><a href="#output">연구성과</a></li>
+      <li><a href="#parrot">앵무새 검사</a></li>
       <li><a href="#news">소식</a></li>
     </ul>
     <a class="nav-cta" href="#contact">문의하기</a>
@@ -585,6 +689,161 @@ footer { background: #0a0e1a; padding: 44px 0; border-top: 1px solid rgba(255,25
             Lee, D. K., <strong>Park, J.</strong>, Kim, S. C., Kim, H. J., Kwon, J. H., Lyoo, Y. S., ... &amp; Kim, H. R. (2026)<br>
             <span class="pub-journal">Frontiers in Veterinary Science</span>, 13, 1785848
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARROT -->
+<section id="parrot">
+  <div class="wrap">
+    <span class="sec-tag">Avian Diagnostics</span>
+    <h2 class="sec-title">앵무새 6대 질병 연구</h2>
+    <div class="rule"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px;">
+      <p class="sec-desc" style="margin-bottom:0;">어큐메딕스는 앵무새 6대 질병 검사를 위한 조류 감염병 유전자 분석 및 검사 키트를 개발합니다.</p>
+      <a href="parrot.html" style="display:inline-block;padding:10px 22px;background:var(--navy);color:#fff;font-size:12px;font-weight:600;border-radius:3px;text-decoration:none;white-space:nowrap;letter-spacing:0.5px;transition:background 0.2s;" onmouseover="this.style.background='#0f1633'" onmouseout="this.style.background='var(--navy)'">전용 페이지 보기 →</a>
+    </div>
+    <div class="parrot-intro">
+      <div class="parrot-intro-text">
+        <p>어큐메딕스는 앵무새 6대 질병 검사를 위한 조류 감염병 유전자 분석 및 검사 키트를 개발합니다. 국내 전문적인 앵무새 질병 연구팀과 협업하여 조류 감염병 원인체들의 유전자를 분석하고 검사 키트를 최신화합니다.</p>
+        <p>앵무새 6대 질병 검사는 분양 전 건강 확인, 합사 전 감염병 확인, 번식장 관리, 동물병원 의뢰 검사 등에 활용될 수 있습니다.</p>
+        <p>어큐메딕스와 함께하는 동물병원에서 주요 감염성 질환 검사 및 성별 검사 상담을 받으실 수 있습니다.</p>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">검사 활용 분야</p>
+        <div class="info-table">
+          <div class="info-row"><span class="info-k" style="width:110px;">분양 전</span><span class="info-v">건강 상태 및 감염병 보유 여부 확인</span></div>
+          <div class="info-row"><span class="info-k" style="width:110px;">합사 전</span><span class="info-v">기존 개체 보호를 위한 감염병 사전 확인</span></div>
+          <div class="info-row"><span class="info-k" style="width:110px;">번식장 관리</span><span class="info-v">집단 내 감염병 모니터링 및 관리</span></div>
+          <div class="info-row"><span class="info-k" style="width:110px;">병원 의뢰</span><span class="info-v">동물병원 내 정밀 감염병 의뢰 검사</span></div>
+          <div class="info-row"><span class="info-k" style="width:110px;">성별 검사</span><span class="info-v">유전자 기반 성별 판별 검사</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6대 질병 -->
+    <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0;">앵무새 6대 주요 감염병</p>
+    <div class="disease-grid" style="margin-top:16px;">
+      <div class="disease-card">
+        <div class="dc-num">01</div>
+        <div class="dc-title">어린사랑앵무새병</div>
+        <div class="dc-name">Budgerigar fledgling disease (BFD)</div>
+        <div class="dc-desc">
+          <strong style="color:var(--navy);font-size:12px;">원인체</strong><br>
+          Avian polyoma virus (APV)<br><br>
+          <strong style="color:var(--navy);font-size:12px;">검사방법</strong><br>
+          Real-time PCR
+        </div>
+      </div>
+      <div class="disease-card">
+        <div class="dc-num">02</div>
+        <div class="dc-title">앵무새 부리·깃털병</div>
+        <div class="dc-name">Psittacine beak and feather disease (PBFD)</div>
+        <div class="dc-desc">
+          <strong style="color:var(--navy);font-size:12px;">원인체</strong><br>
+          Psittacine beak and feather disease virus (PBFDV)<br><br>
+          <strong style="color:var(--navy);font-size:12px;">검사방법</strong><br>
+          Real-time PCR
+        </div>
+      </div>
+      <div class="disease-card">
+        <div class="dc-num">03</div>
+        <div class="dc-title">파체코병</div>
+        <div class="dc-name">Pacheco's disease (PD)</div>
+        <div class="dc-desc">
+          <strong style="color:var(--navy);font-size:12px;">원인체</strong><br>
+          Psittacine herpesvirus (PHV)<br><br>
+          <strong style="color:var(--navy);font-size:12px;">검사방법</strong><br>
+          Real-time PCR
+        </div>
+      </div>
+      <div class="disease-card">
+        <div class="dc-num">04</div>
+        <div class="dc-title">선위확장증</div>
+        <div class="dc-name">Proventricular dilatation disease (PDD)</div>
+        <div class="dc-desc">
+          <strong style="color:var(--navy);font-size:12px;">원인체</strong><br>
+          Avian bornavirus (ABV)<br><br>
+          <strong style="color:var(--navy);font-size:12px;">검사방법</strong><br>
+          Real-time RT-PCR
+        </div>
+      </div>
+      <div class="disease-card">
+        <div class="dc-num">05</div>
+        <div class="dc-title">파라믹소바이러스 감염증</div>
+        <div class="dc-name">Paramyxovirus infection</div>
+        <div class="dc-desc">
+          <strong style="color:var(--navy);font-size:12px;">원인체</strong><br>
+          Avian paramyxovirus<br><br>
+          <strong style="color:var(--navy);font-size:12px;">검사방법</strong><br>
+          Conventional RT-PCR
+        </div>
+      </div>
+      <div class="disease-card">
+        <div class="dc-num">06</div>
+        <div class="dc-title">앵무병</div>
+        <div class="dc-name">Psittacosis</div>
+        <div class="dc-desc">
+          <strong style="color:var(--navy);font-size:12px;">원인체</strong><br>
+          Chlamydophila psittaci<br><br>
+          <strong style="color:var(--navy);font-size:12px;">검사방법</strong><br>
+          Real-time PCR
+        </div>
+      </div>
+    </div>
+
+    <!-- 검사 절차 -->
+    <div class="procedure-wrap">
+      <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0;">검사 절차</p>
+      <div class="procedure-steps">
+        <div class="proc-step">
+          <div class="proc-num">1</div>
+          <div class="proc-title">검사 문의</div>
+          <div class="proc-desc">협력 동물병원 또는 어큐메딕스에 검사 문의</div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">2</div>
+          <div class="proc-title">검사 항목 안내</div>
+          <div class="proc-desc">증상 및 목적에 맞는 검사 항목 안내</div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">3</div>
+          <div class="proc-title">시료 접수</div>
+          <div class="proc-desc">혈액, 깃털, 클로아카 스왑 등 시료 채취 및 접수</div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">4</div>
+          <div class="proc-title">유전자 검사</div>
+          <div class="proc-desc">PCR 기반 분자생물학적 감염병 원인체 분석</div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">5</div>
+          <div class="proc-title">결과 안내</div>
+          <div class="proc-desc">검사 결과 보고서 발급 및 해석 안내</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 협력 동물병원 -->
+    <div class="hospital-section">
+      <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">협력 동물병원</p>
+      <div class="hospital-note">
+        <p>어큐메딕스와 협력하는 앵무새 전문 동물병원에서 검사를 의뢰하실 수 있습니다. 협력 병원 목록은 순차적으로 등록될 예정입니다. 검사 문의는 아래 연락처로 직접 문의해 주세요.</p>
+      </div>
+      <div class="hospital-map-placeholder">
+        <p>🗺️ 협력 병원 지도</p>
+        <small>협력 병원 등록 후 지도가 표시됩니다</small>
+      </div>
+      <div class="hospital-list">
+        <div class="hospital-item" style="color:var(--muted);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border);padding:10px 0;">
+          <span>병원명</span><span>주소</span><span>전화번호</span>
+        </div>
+        <div class="hospital-item">
+          <span class="h-name">등록 예정</span>
+          <span class="h-addr">—</span>
+          <span class="h-tel">—</span>
         </div>
       </div>
     </div>
