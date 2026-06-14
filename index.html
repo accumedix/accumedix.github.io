@@ -340,6 +340,86 @@ nav.light .lang-switch { border-color: rgba(26,36,86,0.2); }
 nav.light .lang-btn { color: var(--muted); }
 nav.light .lang-btn.active { background: var(--navy); color: #fff; }
 
+/* ── DIAGNOSTIC KITS SECTION ── */
+#kits { background: var(--bg); }
+
+.kit-tabs {
+  display: flex; gap: 0; border-bottom: 1px solid var(--border);
+  margin-bottom: 36px; flex-wrap: wrap;
+}
+.kit-tab {
+  padding: 14px 28px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--muted); background: transparent;
+  border: none; border-bottom: 2px solid transparent;
+  cursor: pointer; transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.kit-tab:hover { color: var(--navy); }
+.kit-tab.active { color: var(--navy); border-bottom-color: var(--red); }
+.kit-tab .kit-tab-eng { font-weight: 700; }
+.kit-tab .kit-tab-kor { font-size: 11px; font-weight: 500; color: var(--muted); margin-left: 6px; }
+
+.kit-panel { display: none; }
+.kit-panel.active { display: block; }
+
+.kit-group-title {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--red);
+  margin: 32px 0 16px;
+}
+.kit-group-title:first-child { margin-top: 0; }
+
+.kit-table-wrap { overflow-x: auto; }
+.kit-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px;
+}
+.kit-table thead th {
+  padding: 10px 14px;
+  background: var(--navy); color: #fff;
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  text-align: left; white-space: nowrap;
+}
+.kit-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+.kit-table tbody tr:hover { background: var(--bg2); }
+.kit-table tbody td { padding: 14px; vertical-align: middle; }
+.kit-code {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700; color: var(--navy);
+  white-space: nowrap;
+}
+.kit-name { font-weight: 700; color: var(--navy); line-height: 1.5; font-size: 13px; }
+.kit-name .ruo { font-size: 10px; color: var(--muted); font-weight: 500; }
+.kit-targets { color: var(--sub); font-size: 12.5px; line-height: 1.6; }
+.kit-method {
+  display: inline-block; padding: 3px 9px; border-radius: 3px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.3px;
+  background: rgba(200,16,46,0.08); color: var(--red); white-space: nowrap;
+}
+.kit-channels {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; color: var(--muted); white-space: nowrap;
+}
+.kit-skus { display: flex; gap: 6px; flex-wrap: wrap; }
+.kit-sku-badge {
+  display: inline-block; padding: 3px 8px; border-radius: 3px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+  border: 1px solid var(--border); color: var(--sub);
+  font-family: 'Montserrat', sans-serif; white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .kit-tabs { gap: 0; }
+  .kit-tab { padding: 10px 16px; font-size: 12px; }
+  .kit-tab .kit-tab-kor { display: none; }
+  .kit-table { font-size: 11.5px; }
+  .kit-table thead th, .kit-table tbody td { padding: 8px; }
+  .kit-targets { font-size: 11px; }
+}
+
 /* ── PARROT SECTION ── */
 #parrot { background: var(--bg2); }
 
@@ -482,6 +562,7 @@ nav.light .lang-btn.active { background: var(--navy); color: #fff; }
       <li><a href="#technology" data-ko="기술 접근" data-en="Technology">기술 접근</a></li>
       <li><a href="#pipeline" data-ko="파이프라인" data-en="Pipeline">파이프라인</a></li>
       <li><a href="#output" data-ko="연구성과" data-en="Research Output">연구성과</a></li>
+      <li><a href="#kits" data-ko="진단 키트" data-en="Diagnostic Kits">진단 키트</a></li>
       <li><a href="#parrot" data-ko="앵무새 검사" data-en="Parrot Testing">앵무새 검사</a></li>
       <li><a href="#news" data-ko="소식" data-en="News">소식</a></li>
     </ul>
@@ -716,6 +797,269 @@ nav.light .lang-btn.active { background: var(--navy); color: #fff; }
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC KITS -->
+<section id="kits" class="alt">
+  <div class="wrap">
+    <span class="sec-tag">Diagnostic Kits</span>
+    <h2 class="sec-title" data-ko="진단 키트" data-en="Diagnostic Kits">진단 키트</h2>
+    <div class="rule"></div>
+    <p class="sec-desc" data-ko="어큐메딕스는 동물종별 주요 감염병을 동시에 검출하는 Multiplex real-time PCR 진단 키트를 개발하고 있습니다. 모든 제품은 Solution(사용자 직접 분주형)과 Premix(PCR tube 분주형) 형태로 제공됩니다." data-en="Accumedix develops multiplex real-time PCR diagnostic kits that simultaneously detect major infectious diseases by animal species. All products are available in Solution (user-dispensed) and Premix (pre-dispensed into PCR tubes) formats.">어큐메딕스는 동물종별 주요 감염병을 동시에 검출하는 Multiplex real-time PCR 진단 키트를 개발하고 있습니다. 모든 제품은 Solution(사용자 직접 분주형)과 Premix(PCR tube 분주형) 형태로 제공됩니다.</p>
+
+    <!-- TABS -->
+    <div class="kit-tabs">
+      <button class="kit-tab active" onclick="showKitTab('pigscan', this)">
+        <span class="kit-tab-eng">PigScan™</span><span class="kit-tab-kor" data-ko="양돈" data-en="Swine">양돈</span>
+      </button>
+      <button class="kit-tab" onclick="showKitTab('caniscan', this)">
+        <span class="kit-tab-eng">CaniScan™</span><span class="kit-tab-kor" data-ko="반려견" data-en="Canine">반려견</span>
+      </button>
+      <button class="kit-tab" onclick="showKitTab('feliscan', this)">
+        <span class="kit-tab-eng">FeliScan™</span><span class="kit-tab-kor" data-ko="반려묘" data-en="Feline">반려묘</span>
+      </button>
+      <button class="kit-tab" onclick="showKitTab('parroscan', this)">
+        <span class="kit-tab-eng">ParroScan™</span><span class="kit-tab-kor" data-ko="반려조" data-en="Avian">반려조</span>
+      </button>
+    </div>
+
+    <!-- PIGSCAN PANEL -->
+    <div class="kit-panel active" id="kit-pigscan">
+      <div class="kit-group-title" data-ko="호흡기·전신성" data-en="Respiratory & Systemic">호흡기·전신성</div>
+      <div class="kit-table-wrap">
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th data-ko="코드" data-en="Code">코드</th>
+              <th data-ko="제품명" data-en="Product">제품명</th>
+              <th data-ko="대상 병원체" data-en="Targets">대상 병원체</th>
+              <th data-ko="검출 방식" data-en="Method">검출 방식</th>
+              <th data-ko="채널" data-en="Channels">채널</th>
+              <th data-ko="구성" data-en="SKU">구성</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="kit-code">AMX-PS-001</td>
+              <td class="kit-name">PigScan™ PRRSV(NA/EU)·PCV2<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">PRRSV-1 / PRRSV-2 / PCV2</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">HEX / FAM / Texas Red</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-002</td>
+              <td class="kit-name">PigScan™ PRRSV(NA/EU)·SIV<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">PRRSV-1 / PRRSV-2 / SIV</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">HEX / FAM / Texas Red</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-005</td>
+              <td class="kit-name">PigScan™ SIV·M.hyopneumoniae·PRCV<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">SIV / M.hyopneumoniae / PRCV</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / ROX / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-007</td>
+              <td class="kit-name">PigScan™ PCV2·M.hyopneumoniae·M.hyorhinis<br><span class="ruo">Duplex kit (RUO)</span></td>
+              <td class="kit-targets">PCV2 / M.hyopneumoniae / M.hyorhinis</td>
+              <td><span class="kit-method">qPCR</span></td>
+              <td class="kit-channels">FAM / ROX / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-008</td>
+              <td class="kit-name">PigScan™ APP·HPS<br><span class="ruo">Duplex kit (RUO)</span></td>
+              <td class="kit-targets">A.pleuropneumoniae / G.parasuis</td>
+              <td><span class="kit-method">qPCR</span></td>
+              <td class="kit-channels">Cy5 / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kit-group-title" data-ko="소화기" data-en="Gastrointestinal">소화기</div>
+      <div class="kit-table-wrap">
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th data-ko="코드" data-en="Code">코드</th>
+              <th data-ko="제품명" data-en="Product">제품명</th>
+              <th data-ko="대상 병원체" data-en="Targets">대상 병원체</th>
+              <th data-ko="검출 방식" data-en="Method">검출 방식</th>
+              <th data-ko="채널" data-en="Channels">채널</th>
+              <th data-ko="구성" data-en="SKU">구성</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="kit-code">AMX-PS-003</td>
+              <td class="kit-name">PigScan™ PEDV·TGEV·PDCoV<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">PEDV / TGEV / PDCoV</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / ROX / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-004</td>
+              <td class="kit-name">PigScan™ RVA·RVB·RVC<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">RVA / RVB / RVC (Rotavirus A/B/C)</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">Cy5 / FAM / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-009</td>
+              <td class="kit-name">PigScan™ C.difficile·CPA·CPC<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">C.difficile / C.perfringens type A / C</td>
+              <td><span class="kit-method">qPCR</span></td>
+              <td class="kit-channels">Cy5 / FAM / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-010</td>
+              <td class="kit-name">PigScan™ S.typhimurium·S.cholerasuis·Isospora<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">S.typhimurium / S.cholerasuis / Isospora</td>
+              <td><span class="kit-method">qPCR</span></td>
+              <td class="kit-channels">FAM / HEX / Cy5</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-011</td>
+              <td class="kit-name">PigScan™ L.intracellularis·B.hyodysenteriae<br><span class="ruo">Duplex kit (RUO)</span></td>
+              <td class="kit-targets">L.intracellularis / B.hyodysenteriae</td>
+              <td><span class="kit-method">qPCR</span></td>
+              <td class="kit-channels">Cy5 / FAM</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PS-012</td>
+              <td class="kit-name">PigScan™ PSV·HEV<br><span class="ruo">Duplex kit (RUO)</span></td>
+              <td class="kit-targets">Porcine sapelovirus / Hepatitis E virus</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CANISCAN PANEL -->
+    <div class="kit-panel" id="kit-caniscan">
+      <div class="kit-table-wrap">
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th data-ko="코드" data-en="Code">코드</th>
+              <th data-ko="제품명" data-en="Product">제품명</th>
+              <th data-ko="대상 병원체" data-en="Targets">대상 병원체</th>
+              <th data-ko="검출 방식" data-en="Method">검출 방식</th>
+              <th data-ko="채널" data-en="Channels">채널</th>
+              <th data-ko="구성" data-en="SKU">구성</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="kit-code">AMX-CS-001</td>
+              <td class="kit-name">CaniScan™ CDV Typing-1<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">CDV Universal / America-1 / IPC (Canine 16S rRNA gene)</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / Texas Red / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-CS-002</td>
+              <td class="kit-name">CaniScan™ CDV Typing-2<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">CDV Universal / Asia-1 / Asia-2</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / HEX / Cy5</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-CS-003</td>
+              <td class="kit-name">CaniScan™ CPIV·CRCoV·CIV<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">CPIV-5 / CRCoV / Canine &amp; Feline influenza virus</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / Cy5 / Texas Red</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FELISCAN PANEL -->
+    <div class="kit-panel" id="kit-feliscan">
+      <div class="kit-table-wrap">
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th data-ko="코드" data-en="Code">코드</th>
+              <th data-ko="제품명" data-en="Product">제품명</th>
+              <th data-ko="대상 병원체" data-en="Targets">대상 병원체</th>
+              <th data-ko="검출 방식" data-en="Method">검출 방식</th>
+              <th data-ko="채널" data-en="Channels">채널</th>
+              <th data-ko="구성" data-en="SKU">구성</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="kit-code">AMX-FS-001</td>
+              <td class="kit-name">FeliScan™ FCV·FHV-1·FIV<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">Feline calicivirus / Feline herpesvirus-1 / Canine &amp; Feline influenza virus</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">Cy5 / FAM / Texas Red</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PARROSCAN PANEL -->
+    <div class="kit-panel" id="kit-parroscan">
+      <div class="kit-table-wrap">
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th data-ko="코드" data-en="Code">코드</th>
+              <th data-ko="제품명" data-en="Product">제품명</th>
+              <th data-ko="대상 병원체" data-en="Targets">대상 병원체</th>
+              <th data-ko="검출 방식" data-en="Method">검출 방식</th>
+              <th data-ko="채널" data-en="Channels">채널</th>
+              <th data-ko="구성" data-en="SKU">구성</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="kit-code">AMX-PAS-001</td>
+              <td class="kit-name">ParroScan™ PBFDV·APyV<br><span class="ruo">Triplex kit (RUO)</span></td>
+              <td class="kit-targets">Psittacine beak and feather disease virus / Avian polyomavirus</td>
+              <td><span class="kit-method">qPCR</span></td>
+              <td class="kit-channels">FAM / HEX</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+            <tr>
+              <td class="kit-code">AMX-PAS-002</td>
+              <td class="kit-name">ParroScan™ ABV Typing<br><span class="ruo">Duplex kit (RUO)</span></td>
+              <td class="kit-targets">Avian bornavirus Universal / Type 2 / Type 4</td>
+              <td><span class="kit-method">RT-qPCR</span></td>
+              <td class="kit-channels">FAM / HEX / Cy5</td>
+              <td class="kit-skus"><span class="kit-sku-badge" title="Solution: 사용자 직접 분주형">96T-S</span><span class="kit-sku-badge" title="Premix: PCR tube 분주형">96T-P</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--muted);margin-top:24px;" data-ko="* 모든 제품은 96T 규격, RUO(Research Use Only)이며, Solution(사용자 직접 분주형) / Premix(PCR tube 분주형) 형태로 제공됩니다." data-en="* All products are 96T format, RUO (Research Use Only), and available as Solution (user-dispensed) or Premix (pre-dispensed into PCR tubes).">* 모든 제품은 96T 규격, RUO(Research Use Only)이며, Solution(사용자 직접 분주형) / Premix(PCR tube 분주형) 형태로 제공됩니다.</p>
   </div>
 </section>
 
@@ -985,6 +1329,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+</script>
+
+<script>
+// 진단키트 탭 전환
+function showKitTab(name, btn) {
+  document.querySelectorAll('.kit-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.kit-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('kit-' + name).classList.add('active');
+  btn.classList.add('active');
+}
 </script>
 
 <script>
